@@ -11,7 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Décommentez et ajustez ces lignes avec le nom exact de votre dépôt GitHub
+  // Configuration pour un dépôt de projet
   basePath: '/bonus-hunt',
   assetPrefix: '/bonus-hunt/',
 };

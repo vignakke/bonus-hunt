@@ -1,0 +1,12 @@
+/
+├── docs/                  # Dossier racine pour GitHub Pages
+│   ├── .nojekyll          # Fichier pour désactiver Jekyll
+│   ├── index.html         # Page d'accueil générée par Next.js
+│   ├── _next/             # Dossier contenant les assets statiques
+│   │   ├── static/
+│   │   └── ...
+│   └── ...
+├── index.html             # Fichier de redirection (optionnel)
+├── next.config.mjs        # Configuration Next.js
+├── package.json           # Dépendances
+└── ...
