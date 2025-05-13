@@ -11,8 +11,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/bonus-hunt-tracker' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/bonus-hunt-tracker/' : '',
+  // Décommentez et ajustez ces lignes avec le nom exact de votre dépôt GitHub
+  basePath: '/bonus-hunt',
+  assetPrefix: '/bonus-hunt/',
 };
 
 export default nextConfig;
