@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glassmorphism-card {
+  /* Structure de base */
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+
+  /* Effet de verre */
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(12px);
+
+  /* Espace intérieur et autres styles */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+.glassmorphism-card::before {
+  /* Création de l'effet de gradient animé */
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+
+  /* Définition du gradient - version plus sombre */
+  background: linear-gradient(45deg, rgba(30, 64, 175, 0.2), rgba(91, 33, 182, 0.2), rgba(157, 23, 77, 0.2));
+  background-size: 200% 200%;
+
+  /* Style de l'effet */
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0.3;
+
+  /* Animation */
+  animation: gradient-shift 8s ease infinite;
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+
+/* Optimisations mobiles */
+@media (max-width: 640px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  .glassmorphism-card {
+    padding: 0.5rem;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    min-width: 80px;
+  }
+}
